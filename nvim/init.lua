@@ -78,6 +78,10 @@ require("lazy").setup({
 					end,
 				})
 				vim.cmd("set completeopt+=noselect")
+
+				vim.keymap.set('i', '<c-space>', function()
+					vim.lsp.completion.get()
+				end)
 			end
 		},
 		{
@@ -111,5 +115,6 @@ vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
-
 vim.keymap.set('v', '<leader>y', '"+y<CR>')
+vim.keymap.set('v', '<leader>d', '"+d<CR>')
+
