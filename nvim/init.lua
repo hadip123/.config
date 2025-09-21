@@ -115,7 +115,13 @@ require("lazy").setup({
 				require "mason".setup()
 			end
 		},
-		{ "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" }
+		{ "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
+		{
+			"catgoose/nvim-colorizer.lua",
+			event = "BufReadPre",
+			opts = { -- set to setup table
+			},
+		}
 	},
 	install = { colorscheme = { "vague" } },
 	checker = { enabled = false },

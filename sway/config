@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu wofi --show drun
 
 include /etc/sway/config-vars.d/*
 
@@ -214,7 +214,26 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym Print exec  hyprshot -m region
+	
+
+## Colours
+set $base00 #141415
+set $base01 #3c3836
+set $base02 #504945
+set $base03 #665c54
+set $base04 #f3be7c
+set $base05 #7e98e8
+set $base06 #90a0b5
+set $base07 #6e94b2
+set $base08 #333738
+set $base09 #606079
+set $base0A #d79921
+set $base0B #98971a
+set $base0C #458588
+set $base0D #7e98e8
+set $base0E #689d6a
+set $base0F #a89984
 
 #
 # Status Bar:
@@ -228,11 +247,24 @@ bar {
     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        statusline #cdcdcd
+        background #141415
+        inactive_workspace $base08 $base02 $base04
+		focused_workspace $base0C $base0D $base00
+
     }
 }
 
 include /etc/sway/config.d/*
 exec systemctl --user import-environment
+
+## Window Colours
+client.focused   $base0D  $base00  $base06  $base08  $base09
+client.focused_inactive  $base02  $base00  $base06  $base08  $base02
+client.unfocused   $base01  $base00  $base06  $base08  $base02
+client.urgent   $base07  $base00  $base08  $base0B  $base02
+client.placeholder       $base02  $base00  $base06  $base03  $base04
+client.background        $base00
+
+exec_always nm-applet
+exec_always blueman-applet
