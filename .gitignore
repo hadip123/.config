@@ -1,0 +1,22 @@
+# Ignore everything
+*
+
+# Allow these directories and contents
+!/nvim/
+!/nvim/**
+!/i3/
+!/i3/**
+!/hypr/
+!/hypr/**
+!/waybar/
+!/waybar/**
+!/tmux/
+!/tmux/**
+!/scripts/
+!/scripts/**
+!.gitignore
+
+# But ignore nested git metadata
+nvim/.git/
+waybar/.git/
+
