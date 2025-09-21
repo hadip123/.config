@@ -61,6 +61,9 @@ require("lazy").setup({
 					root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
 					settings = {
 						Lua = {
+							workspace = {
+								library = vim.api.nvim_get_runtime_file("", true),
+							},
 							runtime = {
 								version = 'LuaJIT',
 							}
@@ -105,7 +108,14 @@ require("lazy").setup({
 			config = true
 			-- use opts = {} for passing setup options
 			-- this is equivalent to setup({}) function
-		}
+		},
+		{
+			'mason-org/mason.nvim',
+			init = function()
+				require "mason".setup()
+			end
+		},
+		{ "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" }
 	},
 	install = { colorscheme = { "vague" } },
 	checker = { enabled = false },
@@ -113,8 +123,8 @@ require("lazy").setup({
 
 vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
+vim.keymap.set('n', '<leader>Q', ':wq<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 vim.keymap.set('v', '<leader>y', '"+y<CR>')
-vim.keymap.set('v', '<leader>d', '"+d<CR>')
-
