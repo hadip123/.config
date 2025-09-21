@@ -268,3 +268,18 @@ client.background        $base00
 
 exec_always nm-applet
 exec_always blueman-applet
+exec_always wlr-randr --output eDP-1 --scale 1.35
+
+input "type:touchpad" {
+    dwt enabled
+    dwtp enabled
+    tap enabled
+    tap_button_map lrm
+    natural_scroll enabled
+}
+
+input type:keyboard {
+    xkb_layout us,ir
+    xkb_options grp:caps_toggle
+}
+
