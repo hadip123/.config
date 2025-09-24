@@ -54,7 +54,7 @@ require("lazy").setup({
 				local lspconfig = require("lspconfig")
 				lspconfig.gopls.setup({})
 
-				vim.lsp.enable({ 'luals' })
+				vim.lsp.enable({ 'luals', 'tinymist' })
 				vim.lsp.config['luals'] = {
 					cmd = { 'lua-language-server' },
 					filetypes = { 'lua' },

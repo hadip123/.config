@@ -3,6 +3,8 @@
 DIRS=(
 	"$HOME/w"
 	"$HOME"
+	"$HOME/Documents"
+	"$HOME/Documents/notes"
 	"$HOME/.config"
 	"$HOME/Projects"
 	)
