@@ -289,6 +289,7 @@ exec swayidle -w \
 exec_always bash $HOME/.config/waybar/launch.sh
 
 # drawing 
+bindsym $mod+Shift+d exec sh $HOME/.config/scripts/toggle_drawing_mode.sh
 bindsym $mod+g exec flatpak run net.christianbeier.Gromit-MPX -v
 bindsym $mod+Shift+t exec flatpak run net.christianbeier.Gromit-MPX --toggle
 bindsym $mod+Shift+y exec sh $HOME/.config/scripts/toggle_touchscreen.sh
