@@ -21,4 +21,4 @@
 # But ignore nested git metadata
 nvim/.git/
 waybar/.git/
-
+scripts/timer/timers

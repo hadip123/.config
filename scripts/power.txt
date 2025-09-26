@@ -1,3 +1,4 @@
+lock | swaylock -c 121212
 suspend | systemctl suspend
-poweroff | systemctl poweroff -i 
 reboot | systemctl reboot
+poweroff | systemctl poweroff -i 

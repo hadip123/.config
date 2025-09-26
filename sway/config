@@ -290,12 +290,14 @@ exec_always bash $HOME/.config/waybar/launch.sh
 
 # drawing 
 bindsym $mod+Shift+d exec sh $HOME/.config/scripts/toggle_drawing_mode.sh
-bindsym $mod+g exec flatpak run net.christianbeier.Gromit-MPX -v
-bindsym $mod+Shift+t exec flatpak run net.christianbeier.Gromit-MPX --toggle
+# bindsym $mod+g exec flatpak run net.christianbeier.Gromit-MPX -v
+# bindsym $mod+Shift+t exec flatpak run net.christianbeier.Gromit-MPX --toggle
 bindsym $mod+Shift+y exec sh $HOME/.config/scripts/toggle_touchscreen.sh
 bindsym $mod+Shift+u exec flatpak run net.christianbeier.Gromit-MPX --clear
-# bindsym --locked XF86Launch9 exec flatpak run net.christianbeier.Gromit-MPX --clear
 bindsym --locked Super_L exec flatpak run net.christianbeier.Gromit-MPX --toggle
 
 # power options
 bindsym $mod+Shift+p exec sh $HOME/.config/scripts/power.sh
+
+# timer
+bindsym $mod+Shift+g exec sh $HOME/.config/scripts/timer/timer.sh
