@@ -8,7 +8,7 @@ ask_and_make() {
 }
 
 start() {
-	prompt=$(wmenu -p "Ed Book" -M 606079  -l 20 -f "MonaspiceAr Nerd Font Mono 16" -i -N 121212 -S 7e98e8 -s 121212 -b < /dev/null)
+	prompt=$(wmenu -p "A name for the timer" -M 606079  -l 20 -f "MonaspiceAr Nerd Font Mono 16" -i -N 121212 -S 7e98e8 -s 121212 -b < /dev/null)
 	[ -z $prompt ] && return
 
 	mkdir -p $HOME/.config/scripts/timer/timers
