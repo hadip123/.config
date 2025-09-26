@@ -1,0 +1,3 @@
+map = adjust_window width
+map t :bjump t
+map p jumplist forward

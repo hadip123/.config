@@ -14,6 +14,8 @@
 !/tmux/**
 !/scripts/
 !/scripts/**
+!/zathura/
+!/zathura/**
 !.gitignore
 
 # But ignore nested git metadata
