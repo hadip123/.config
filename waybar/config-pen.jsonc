@@ -8,7 +8,11 @@
     // Choose the order of the modules
     "modules-left": [
 		"custom/clear",
-		"custom/touch"
+		"custom/touch",
+		"custom/toggle"
+    ],
+    "modules-right": [
+		"custom/exit"
     ],
     "custom/clear": {
         "format": "CLEAR",
@@ -18,10 +22,26 @@
         "escape": true,
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
+    "custom/toggle": {
+        "format": "TOGGLE",
+        "return-type": "json",
+		"on-click": "flatpak run net.christianbeier.Gromit-MPX --toggle",
+        "max-length": 40,
+        "escape": true,
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
     "custom/touch": {
         "format": "TOUCH",
         "return-type": "json",
 		"on-click": "sh $HOME/.config/scripts/toggle_touchscreen.sh",
+        "max-length": 50,
+        "escape": true,
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/exit": {
+        "format": "EXIT",
+        "return-type": "json",
+		"on-click": "sh $HOME/.config/scripts/toggle_drawing_mode.sh",
         "max-length": 50,
         "escape": true,
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name

@@ -296,3 +296,6 @@ bindsym $mod+Shift+y exec sh $HOME/.config/scripts/toggle_touchscreen.sh
 bindsym $mod+Shift+u exec flatpak run net.christianbeier.Gromit-MPX --clear
 # bindsym --locked XF86Launch9 exec flatpak run net.christianbeier.Gromit-MPX --clear
 bindsym --locked Super_L exec flatpak run net.christianbeier.Gromit-MPX --toggle
+
+# power options
+bindsym $mod+Shift+p exec sh $HOME/.config/scripts/power.sh

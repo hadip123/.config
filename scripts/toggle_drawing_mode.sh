@@ -12,7 +12,7 @@ run_drawing_options() {
 	waybar -c $HOME/.config/waybar/config-pen.jsonc &
 }
 
-[ $(ps aux | grep config-pen | wc -l) -gt 1 ] \
+[ $(ps aux | grep config-pen | wc -l) -gt 1 ] || [ $(ps aux | grep Gromit-mpx | wc -l) -gt 1 ] \
 	&& kill_drawing_options \
 	|| run_drawing_options
 

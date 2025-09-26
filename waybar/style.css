@@ -87,6 +87,7 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-toggle,
 #custom-clear,
 #custom-touch,
 #tray,
@@ -99,7 +100,11 @@ button:hover {
     background-color: #3c3836;
     color: #ffffff;
 }
-
+#custom-exit {
+	padding: 0 10px;
+	background-color: #d79921;
+	color: #121212;
+}
 
 #window,
 #workspaces {

@@ -1,0 +1,3 @@
+suspend | systemctl suspend
+poweroff | systemctl poweroff -i 
+reboot | systemctl reboot
