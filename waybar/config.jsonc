@@ -7,7 +7,9 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
+		"custom/clear",
+		"custom/touch",
+        "sway/workspaces"
     ],
     "modules-center": [
         "sway/window"
@@ -16,9 +18,6 @@
         "pulseaudio",
         "network",
         "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
         "battery",
         "battery#bat2",
         "clock",
@@ -193,6 +192,22 @@
         },
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/clear": {
+        "format": "clear",
+        "return-type": "json",
+		"on-click": "flatpak run net.christianbeier.Gromit-MPX --clear",
+        "max-length": 40,
+        "escape": true,
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/touch": {
+        "format": "touch",
+        "return-type": "json",
+		"on-click": "sh $HOME/.config/scripts/toggle_touchscreen.sh",
+        "max-length": 40,
+        "escape": true,
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }

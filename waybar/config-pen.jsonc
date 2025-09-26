@@ -1,0 +1,29 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 40, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 10, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+		"custom/clear",
+		"custom/touch"
+    ],
+    "custom/clear": {
+        "format": "CLEAR",
+        "return-type": "json",
+		"on-click": "flatpak run net.christianbeier.Gromit-MPX --clear",
+        "max-length": 40,
+        "escape": true,
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/touch": {
+        "format": "TOUCH",
+        "return-type": "json",
+		"on-click": "sh $HOME/.config/scripts/toggle_touchscreen.sh",
+        "max-length": 50,
+        "escape": true,
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}

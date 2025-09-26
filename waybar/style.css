@@ -87,6 +87,8 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-clear,
+#custom-touch,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -97,6 +99,7 @@ button:hover {
     background-color: #3c3836;
     color: #ffffff;
 }
+
 
 #window,
 #workspaces {

@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu wofi --show drun
+set $menu wmenu-run -p drun -l 20 -f "MonaspiceAr Nerd Font Mono 16" -i -N 121212 -S 7e98e8 -s 121212 -b
 
 include /etc/sway/config-vars.d/*
 
@@ -73,6 +73,7 @@ output * bg #093999 solid_color
 
     # Start your launcher
     bindsym $mod+d exec $menu
+	bindsym $mod+Shift+w exec sh $HOME/.config/scripts/ed_books.sh
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -205,7 +206,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
@@ -286,3 +287,11 @@ exec swayidle -w \
          before-sleep 'swaylock -f -c 000000'
 
 exec_always bash $HOME/.config/waybar/launch.sh
+
+# drawing 
+bindsym $mod+g exec flatpak run net.christianbeier.Gromit-MPX -v
+bindsym $mod+Shift+t exec flatpak run net.christianbeier.Gromit-MPX --toggle
+bindsym $mod+Shift+y exec sh $HOME/.config/scripts/toggle_touchscreen.sh
+bindsym $mod+Shift+u exec flatpak run net.christianbeier.Gromit-MPX --clear
+# bindsym --locked XF86Launch9 exec flatpak run net.christianbeier.Gromit-MPX --clear
+bindsym --locked Super_L exec flatpak run net.christianbeier.Gromit-MPX --toggle

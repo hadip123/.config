@@ -45,6 +45,7 @@ require("lazy").setup({
 				require('mini.pick').setup()
 				vim.keymap.set('n', '<c-p>', function() MiniPick.builtin.files({ tool = "git" }) end)
 				vim.keymap.set('n', '<c-h>', function() MiniPick.builtin.help() end)
+				vim.keymap.set('n', '<c-b>', function() MiniPick.builtin.buffers() end)
 			end
 		},
 		{
@@ -134,3 +135,4 @@ vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 vim.keymap.set('v', '<leader>y', '"+y<CR>')
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
